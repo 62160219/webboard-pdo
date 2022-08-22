@@ -22,12 +22,11 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>#</th>
 								<th>หัวข้อคำถาม</th>
 								<th>จำนวนผู้เข้าอ่าน</th>
 								<th>จำนวนผู้เข้าตอบ</th>
 								<th>วันที่สร้าง</th>
-								<th>ผู้ตั้งหระทู้</th>
+								<th>ผู้ตั้งกระทู้</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -42,7 +41,6 @@
 									$countReply->execute();
 							?>
 							<tr>
-								<td><?php echo $row["qt_id"];?></td>
 						    <td><a href="questioin_reply.php?qt_id=<?php echo $row["qt_id"]; ?>"><?php echo $row["qt_title"];?></a></td>
 						    <td><?php echo $row["qt_view"];?></td>
 						    <td><?php echo number_format($countReply->rowCount());?></td>

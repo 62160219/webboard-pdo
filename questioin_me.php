@@ -30,7 +30,6 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>#</th>
 								<th>หัวข้อคำถาม</th>
 								<th>จำนวนผู้เข้าอ่าน</th>
 								<th>จำนวนผู้เข้าตอบ</th>
@@ -49,14 +48,13 @@
 									$countReply->execute();
 							?>
 							<tr>
-								<td><?php echo $row["qt_id"];?></td>
 						    <td><a href="questioin_reply.php?qt_id=<?php echo $row["qt_id"]; ?>"><?php echo $row["qt_title"];?></a></td>
 						    <td><?php echo $row["qt_view"];?></td>
 						    <td><?php echo number_format($countReply->rowCount());?></td>
 						    <td><?php echo $row["qt_created"];?></td>
 								<td width="130">
 									<a class="btn btn-info" href="questioin_edit.php?edit=<?php echo $row["qt_id"]; ?>" role="button">แก้ไข</a>
-									<a class="btn btn-danger" href="questioin_me.php?del=<?php echo $row["qt_id"]; ?>" onclick="return confirm('ท่านต้องการลบแถวนี้ใช่หรือไม่');" role="button">ลบ</a>
+									<a class="btn btn-danger" href="questioin_me.php?del=<?php echo $row["qt_id"]; ?>" onclick="return confirm('ท่านต้องการลบใช่หรือไม่');" role="button">ลบ</a>
 								</td>
 							</tr>
 							<?php 

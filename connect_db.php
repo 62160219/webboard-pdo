@@ -3,9 +3,9 @@
 	session_start();//เรื่มต้น session
 
 	$db_host = "localhost";
-	$db_name = "webboard";
+	$db_name = "forum2";
 	$db_user = "root";
-	$db_pass = "1234@#+";
+	$db_pass = "";
 	
 	try{
     $db_con = new PDO("mysql:host={$db_host};dbname={$db_name}",$db_user,$db_pass);

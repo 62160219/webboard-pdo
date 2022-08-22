@@ -20,19 +20,23 @@
 				<div class="panel panel-default">
 				  <div class="panel-heading"><strong>แก้ไขกระทู้</strong></div>
 				  <div class="panel-body">
-				    <form method="post" action="questioin_send_update.php">
+				    <form method="post" action="questioin_send_update.php" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label>หัวข้อ</label>
-						    <input type="text" class="form-control" name="qt_title" value="<?php echo $row["qt_title"];?>"  placeholder="ระบุหัวข้อ">
+						    <input type="text" name="qt_title" class="form-control" value="<?php echo $row["qt_title"];?>" required>
 						  </div>
 						  <div class="form-group">
 						    <label>รายละเอียด</label>
-						    <textarea class="form-control" name="qt_detail" rows="3" placeholder="ระบุรายละเอียด"><?php echo $row["qt_detail"];?></textarea>
+						    <textarea class="form-control" name="qt_detail" required><?php echo $row["qt_detail"];?> </textarea>
 						  </div>
-						   <input type="hidden" name="qt_id" id="qt_id" value="<?php echo $row["qt_id"];?>"  />
-						  <button type="submit" class="btn btn-primary">บันทึก</button>
+						  <div class="form-group">
+						  	<label >รูป</label>
+                            <input type="file" accept="image/*" class="form-control" name="qt_image">
+						  </div>
+						  <input type="hidden" name="qt_id" id="qt_id" value="<?php echo $row["qt_id"];?>"  />
+						  <button type="submit"class="btn btn-primary">บันทึก</button>
 						  <button type="reset" class="btn btn-default">ยกเลิก</button>
-						</form>
+					</form>
 				  </div>
 				</div>
 			</div>

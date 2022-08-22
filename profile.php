@@ -6,7 +6,7 @@
 			$del = $db_con->prepare("DELETE FROM member WHERE m_id = '".$_GET["del"]."' ");
 			$del->execute();
 
-			header("Location:member.php");
+			header("Location:profile.php");
 		}
 	?>
 </head>
@@ -17,16 +17,14 @@
 				<?php include("top_menu.php"); ?>
 			</div>
 		</div>
-		<h3>รายการสมาชิกทั้งหมด</h3>
 		<hr>
 		<div class="row">
 			<div class="col-md-12">
+				<h3>ข้อมูลของฉัน</h3>
 				<div class="table-responsive">
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>Status</th>
 								<th>Email</th>
 								<th>Name</th>
 								<th>วันที่สร้าง</th>
@@ -34,8 +32,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php 
-								$sql = "SELECT * FROM member ORDER BY m_id = '".$_SESSION["member_id"]."'"; 
+							<?php
+								$sql = "SELECT * FROM member WHERE m_id = '".$_SESSION["member_id"]."' ORDER BY m_id DESC"; 
 								$stmt = $db_con->prepare($sql);
 								$stmt->execute();
 
@@ -44,15 +42,12 @@
 									$countReply->execute();
 							?>
 							<tr>
-								<th scope="row"><?php echo $row["m_id"];?></th>
-								<td><?php echo $row["m_type"];?></td>
-								<td><?php echo $row["email"];?></td>
-								<td><?php echo $row["m_name"];?></td>
-								<td><?php echo $row["m_created"];?></td>
-								<td><img src="uploads/<?php echo $row['m_image'] ?>" alt="" width="64" height="64"></td>
+						    <td><?php echo $row["email"];?></a></td>
+						    <td><?php echo $row["m_name"];?></td>
+						    <td><?php echo $row["m_created"];?></td>
+                            <td><img src="uploads/<?php echo $r['m_image'] ?>" alt="" width="64" height="64"></td>
 								<td width="130">
-									<a class="btn btn-info" href="member_edit.php?edit=<?php echo $row["m_id"]; ?>" role="button">แก้ไข</a>
-									<a class="btn btn-danger" href="member.php?del=<?php echo $row["m_id"]; ?>" onclick="return confirm('ท่านต้องการลบแถวนี้ใช่หรือไม่');" role="button">ลบ</a>
+									<a class="btn btn-info" href="profile_edit.php?edit=<?php echo $row["m_id"]; ?>" role="button">แก้ไข</a>
 								</td>
 							</tr>
 							<?php 

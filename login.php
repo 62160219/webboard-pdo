@@ -15,11 +15,11 @@
 				    <form method="post" action="login_send.php">
 						  <div class="form-group">
 						    <label>ชื่อผู้ใช้งาน</label>
-						    <input type="text" name="username" class="form-control" placeholder="ระบุชื่อผู้ใช้งาน">
+						    <input type="text" name="email" class="form-control" placeholder="ระบุชื่อผู้ใช้งาน" required>
 						  </div>
 						  <div class="form-group">
 						    <label>รหัสผ่าน</label>
-						    <input type="password" name="password" class="form-control" placeholder="ระบุรหัสผ่าน">
+						    <input type="password" name="password" class="form-control" placeholder="ระบุรหัสผ่าน" required>
 						  </div>
 						  <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
 						</form>
